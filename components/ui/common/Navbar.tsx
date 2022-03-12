@@ -1,6 +1,6 @@
 const Navbar = () => {
   const s = {
-    wrapper: `max-w-[1400px] w-full px-2 md:w-5/6 mx-auto`,
+    wrapper: `max-w-[1440px] w-full px-2 md:w-5/6 mx-auto`,
     block: `flex items-center justify-between`,
     left: `hidden md:flex text-primary font-medium`,
     leftmb: `flex md:hidden text-primary font-medium `,

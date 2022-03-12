@@ -4,7 +4,7 @@ import { Web3Button } from '../examples/Web3Button'
 
 const Header = () => {
   const s = {
-    wrapper: `max-w-[1400px] w-full px-4 md:w-5/6 mx-auto pt-2`,
+    wrapper: `max-w-[1440px] w-full px-2 md:w-5/6 mx-auto pt-2`,
     block: `flex items-center justify-between`,
     logo: `aniBtn`,
     rightbar: `flex items-center space-x-4 pb-2`,

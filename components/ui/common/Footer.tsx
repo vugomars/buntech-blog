@@ -25,26 +25,35 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-span-1">
-            <h1>Quick Links</h1>
+            <h1 className="text-xl font-bold text-secondary underline">
+              Quick Links
+            </h1>
             <div className="grid grid-cols-2 md:grid-cols-3">
               <ul className="col-span1">
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
+                <li className="text-lg font-bold text-gray-200 underline">
+                  Projects
+                </li>
+                <li className="cursor-pointer hover:underline">DEX Swap</li>
+                <li className="cursor-pointer hover:underline">LaunchPad</li>
+                <li className="cursor-pointer hover:underline">
+                  NFT Marketplace
+                </li>
               </ul>
 
               <ul className="col-span1">
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
+                <li className="text-lg font-bold text-gray-200 underline">
+                  Courses
+                </li>
+                <li className="cursor-pointer hover:underline">Solidity</li>
+                <li className="cursor-pointer hover:underline">Web3</li>
+                <li className="cursor-pointer hover:underline">Rust Lang</li>
               </ul>
               <ul className="col-span1">
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
+                <li className="text-lg font-bold text-gray-200 underline">
+                  Others
+                </li>
+                <li className="cursor-pointer hover:underline">Liện hệ</li>
+                <li className="cursor-pointer hover:underline"></li>
               </ul>
             </div>
           </div>
@@ -53,13 +62,13 @@ const Footer = () => {
               className="cursor-pointer pb-2 text-blue-500"
               onClick={() => window.open('https://twitter.com/vugomars')}
             >
-              <span className="text-red-500">@About </span>
-              me
+              <span className="text-secondary">@Contact </span>
+              Me
             </h1>
             <div className="border border-white py-2 pl-4">
-              Tuyên bố từ chối trách nhiệm: Các thông tin được đăng trên Buntech
-              chỉ mang ý kiến cá nhân của tác giả, không cấu thành bất kỳ lời
-              khuyên đầu tư nào.
+              <p>Tuyên bố từ chối trách nhiệm:</p> Các thông tin được đăng trên
+              Buntech chỉ mang ý kiến cá nhân của tác giả, không cấu thành bất
+              kỳ lời khuyên đầu tư nào.
             </div>
             <div className="pt-4 text-secondary">Follow me on</div>
             <div className="flex space-x-2 pt-2 text-xl">

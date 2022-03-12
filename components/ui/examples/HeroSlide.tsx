@@ -8,7 +8,12 @@ const HeroSlide = () => {
   return (
     <>
       <div className={s.wrapper}>
-        <Image src="/heroslide/hero1.jpg" width={1500} height={500} />
+        <Image
+          src="/heroslide/hero1.jpg"
+          width={1500}
+          height={500}
+          className="aniBtn"
+        />
         <div className="flex items-center justify-center">o o o o o o</div>
       </div>
     </>
