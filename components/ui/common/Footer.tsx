@@ -1,0 +1,114 @@
+import {
+  FaFacebook,
+  FaTwitter,
+  FaTelegram,
+  FaLinkedin,
+  FaGithub,
+} from 'react-icons/fa'
+import Image from 'next/image'
+
+const Footer = () => {
+  return (
+    <>
+      <div className="bg-gray-600">
+        <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-8 px-4 py-4 text-white md:w-5/6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="col-span-1">
+            <Image src="/images/logo-web.png" height={43} width={150} />
+            <div className="text-justify text-sm">
+              <br />
+              BunTech là một nền tảng cung cấp thông tin, kiến thức về các công
+              nghệ mới. Buntech được thành lập bởi "Đặng Quang Vũ", Hiện đang là
+              một Blockchain Engineer. <br />
+              Với nhiều năm kinh nghiệm trong việc nghiên cứu và phát triển sản
+              phẩm về smart Contract & Blockchain. Hy vọng rằng những gì Vũ cung
+              cấp sẽ mang lại cho mọi người một nền tảng kiến thức tốt.
+            </div>
+          </div>
+          <div className="col-span-1">
+            <h1>Quick Links</h1>
+            <div className="grid grid-cols-2 md:grid-cols-3">
+              <ul className="col-span1">
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+              </ul>
+
+              <ul className="col-span1">
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+              </ul>
+              <ul className="col-span1">
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+              </ul>
+            </div>
+          </div>
+          <div className="col-span-1">
+            <h1
+              className="cursor-pointer pb-2 text-blue-500"
+              onClick={() => window.open('https://twitter.com/vugomars')}
+            >
+              <span className="text-red-500">@About </span>
+              me
+            </h1>
+            <div className="border border-white py-2 pl-4">
+              Tuyên bố từ chối trách nhiệm: Các thông tin được đăng trên Buntech
+              chỉ mang ý kiến cá nhân của tác giả, không cấu thành bất kỳ lời
+              khuyên đầu tư nào.
+            </div>
+            <div className="pt-4 text-secondary">Follow me on</div>
+            <div className="flex space-x-2 pt-2 text-xl">
+              <a
+                className="aniBtn cursor-pointer"
+                onClick={() =>
+                  window.open('https://www.facebook.com/dangquangvu94/')
+                }
+              >
+                <FaFacebook />
+              </a>
+
+              <a
+                className="aniBtn cursor-pointer"
+                onClick={() => window.open('https://twitter.com/vugomars')}
+              >
+                <FaTwitter />
+              </a>
+
+              <a
+                className="aniBtn cursor-pointer"
+                onClick={() => window.open('https://t.me/dangquangvu')}
+              >
+                <FaTelegram />
+              </a>
+
+              <a
+                className="aniBtn cursor-pointer"
+                onClick={() =>
+                  window.open(
+                    'https://www.linkedin.com/in/v%C5%A9-%C4%91%E1%BA%B7ng-quang-1696a5213/'
+                  )
+                }
+              >
+                <FaLinkedin />
+              </a>
+
+              <a
+                className="aniBtn cursor-pointer"
+                onClick={() => window.open('https://github.com/vugomars')}
+              >
+                <FaGithub />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default Footer

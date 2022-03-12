@@ -19,18 +19,25 @@ interface DisconnectButton {
 
 const DisconnectButton = ({ disconnect }: DisconnectButton) => {
   return disconnect ? (
-    <button onClick={disconnect}>Disconnect</button>
+    <button onClick={disconnect}></button>
   ) : (
     <button>Loading...</button>
   )
 }
 
 export function Web3Button() {
-  const { web3Provider, connect, disconnect } = useWeb3()
+  const { web3Provider, connect, disconnect, address } = useWeb3()
 
   return web3Provider ? (
-    <DisconnectButton disconnect={disconnect} />
+    <button
+      onClick={disconnect}
+      className="aniBtn rounded-full border-4 border-double border-primary px-2 py-0.5 font-bold text-primary"
+    >
+      {address?.substring(0, 4)}...{address?.substring(address.length - 4)}
+    </button>
   ) : (
-    <ConnectButton connect={connect} />
+    <div className="aniBtn rounded-full border-4 border-primary bg-primary px-2 py-0.5 font-bold text-white hover:bg-white hover:text-primary">
+      <ConnectButton connect={connect} />
+    </div>
   )
 }

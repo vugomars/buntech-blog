@@ -8,6 +8,7 @@ import {
   web3Reducer,
 } from '../reducers'
 import { ethers } from 'ethers'
+import { toast } from 'react-toastify'
 
 const providerOptions = {
   walletconnect: {
@@ -27,6 +28,11 @@ if (typeof window !== 'undefined') {
   })
 }
 
+type Web3Client = Web3ProviderState & {
+  connect: () => Promise<void>
+  disconnect: () => Promise<void>
+}
+
 export const useWeb3 = () => {
   const [state, dispatch] = useReducer(web3Reducer, Web3InitialState)
   const { provider, web3Provider, address, network } = state
@@ -39,6 +45,7 @@ export const useWeb3 = () => {
         const signer = web3Provider.getSigner()
         const address = await signer.getAddress()
         const network = await web3Provider.getNetwork()
+        toast.success('Connected to Web3')
 
         dispatch({
           type: 'SET_WEB3_PROVIDER',
@@ -61,6 +68,7 @@ export const useWeb3 = () => {
       if (provider?.disconnect && typeof provider.disconnect === 'function') {
         await provider.disconnect()
       }
+      toast.error('Disconnect to Web3')
       dispatch({
         type: 'RESET_WEB3_PROVIDER',
       } as Web3Action)
@@ -72,6 +80,7 @@ export const useWeb3 = () => {
   useEffect(() => {
     if (provider?.on) {
       const handleAccountsChanged = (accounts: string[]) => {
+        toast.info('Changed Web3 Account')
         dispatch({
           type: 'SET_ADDRESS',
           address: accounts[0],
@@ -81,6 +90,7 @@ export const useWeb3 = () => {
       const handleChainChanged = (_hexChainId: string) => {
         if (typeof window !== 'undefined') {
           console.log('switched to chain ...', _hexChainId)
+          toast.info('Web3 Network Changed')
           window.location.reload()
         } else {
           console.log('window is undefined')
@@ -113,5 +123,5 @@ export const useWeb3 = () => {
     network,
     connect,
     disconnect,
-  } as Web3ProviderState
+  } as Web3Client
 }

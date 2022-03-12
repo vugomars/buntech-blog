@@ -1,5 +1,5 @@
-import React, { createContext, ReactChild, useContext } from 'react'
 import { useWeb3 } from '../hooks'
+import React, { createContext, ReactChild, useContext } from 'react'
 import { Web3InitialState, Web3ProviderState } from '../reducers'
 
 const Web3Context = createContext<Web3ProviderState>(Web3InitialState)
