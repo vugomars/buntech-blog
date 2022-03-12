@@ -1,11 +1,11 @@
 import { useWeb3 } from '../hooks'
-import React, { createContext, ReactChild, useContext } from 'react'
+import React, { createContext, ReactChild, ReactNode, useContext } from 'react'
 import { Web3InitialState, Web3ProviderState } from '../reducers'
 
 const Web3Context = createContext<Web3ProviderState>(Web3InitialState)
 
 interface Props {
-  children: ReactChild
+  children: ReactNode
 }
 
 export const Web3ContextProvider = ({ children }: Props) => {
