@@ -10,7 +10,7 @@ import Image from 'next/image'
 const Footer = () => {
   return (
     <>
-      <div className="bg-gray-600">
+      <div className="mt-8 bg-gray-600">
         <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-8 px-4 py-4 text-white md:w-5/6 md:grid-cols-2 lg:grid-cols-3">
           <div className="col-span-1">
             <Image src="/images/logo-web.png" height={43} width={150} />
@@ -25,12 +25,9 @@ const Footer = () => {
             </div>
           </div>
           <div className="col-span-1">
-            <h1 className="text-xl font-bold text-secondary underline">
-              Quick Links
-            </h1>
             <div className="grid grid-cols-2 md:grid-cols-3">
               <ul className="col-span1">
-                <li className="text-lg font-bold text-gray-200 underline">
+                <li className="text-lg font-bold text-secondary underline">
                   Projects
                 </li>
                 <li className="cursor-pointer hover:underline">DEX Swap</li>
@@ -41,7 +38,7 @@ const Footer = () => {
               </ul>
 
               <ul className="col-span1">
-                <li className="text-lg font-bold text-gray-200 underline">
+                <li className="text-lg font-bold text-secondary underline">
                   Courses
                 </li>
                 <li className="cursor-pointer hover:underline">Solidity</li>
@@ -49,7 +46,7 @@ const Footer = () => {
                 <li className="cursor-pointer hover:underline">Rust Lang</li>
               </ul>
               <ul className="col-span1">
-                <li className="text-lg font-bold text-gray-200 underline">
+                <li className="text-lg font-bold text-secondary underline">
                   Others
                 </li>
                 <li className="cursor-pointer hover:underline">Liện hệ</li>
@@ -59,18 +56,17 @@ const Footer = () => {
           </div>
           <div className="col-span-1">
             <h1
-              className="cursor-pointer pb-2 text-blue-500"
+              className="cursor-pointer pb-2 font-bold text-secondary underline"
               onClick={() => window.open('https://twitter.com/vugomars')}
             >
-              <span className="text-secondary">@Contact </span>
-              Me
+              @Contact Me
             </h1>
             <div className="border border-white py-2 pl-4">
-              <p>Tuyên bố từ chối trách nhiệm:</p> Các thông tin được đăng trên
-              Buntech chỉ mang ý kiến cá nhân của tác giả, không cấu thành bất
-              kỳ lời khuyên đầu tư nào.
+              <p className="text-orange-400">Tuyên bố từ chối trách nhiệm:</p> Các
+              thông tin được đăng trên Buntech chỉ mang ý kiến cá nhân của tác
+              giả, không cấu thành bất kỳ lời khuyên đầu tư nào.
             </div>
-            <div className="pt-4 text-secondary">Follow me on</div>
+            <div className="pt-4 text-secondary underline">Follow me on</div>
             <div className="flex space-x-2 pt-2 text-xl">
               <a
                 className="aniBtn cursor-pointer"

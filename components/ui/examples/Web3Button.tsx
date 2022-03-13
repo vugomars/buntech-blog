@@ -1,5 +1,5 @@
+import { useWeb3 } from '@hooks/Web3Client'
 import React from 'react'
-import { useWeb3 } from '../../../hooks'
 
 interface ConnectProps {
   connect: (() => Promise<void>) | null
@@ -36,8 +36,13 @@ export function Web3Button() {
       {address?.substring(0, 4)}...{address?.substring(address.length - 4)}
     </button>
   ) : (
-    <div className="aniBtn rounded-full border-4 border-primary bg-primary px-2 py-0.5 font-bold text-white hover:bg-white hover:text-primary">
-      <ConnectButton connect={connect} />
-    </div>
+    <>
+      <div className="relative">
+        <div className="aniBtn absolute -z-10 h-full w-full rounded-full border-4 border-primary bg-primary px-2 py-0.5 font-bold text-white blur blur-sm hover:bg-white hover:text-primary"></div>
+        <div className="aniBtn rounded-full border-4 border-primary bg-primary px-2 py-0.5 font-bold text-white hover:bg-white hover:text-primary">
+          <ConnectButton connect={connect} />
+        </div>
+      </div>
+    </>
   )
 }

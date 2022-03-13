@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Web3Button } from '../examples/Web3Button'
+import { AiFillLike } from 'react-icons/ai'
 
 const Header = () => {
   const s = {
@@ -22,7 +23,12 @@ const Header = () => {
             </Link>
           </div>
           <div className={s.rightbar}>
-            <span className={s.aboutme}>About Me</span>
+            <span className={s.aboutme}>
+              <span className="hidden md:flex">About Me</span>
+              <span className="md:hidden">
+                <AiFillLike />
+              </span>
+            </span>
             <Web3Button />
           </div>
         </div>

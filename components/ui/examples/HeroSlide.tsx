@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { GrNext, GrPrevious } from 'react-icons/gr'
 
 const HeroSlide = () => {
   const s = {
@@ -9,12 +8,14 @@ const HeroSlide = () => {
     <>
       <div className={s.wrapper}>
         <Image
-          src="/heroslide/hero1.jpg"
+          src="/heroslide/hero1.png"
           width={1500}
           height={500}
           className="aniBtn"
+          priority
         />
-        <div className="flex items-center justify-center">o o o o o o</div>
+        {/* <div className="flex items-center justify-center">o o o o o o</div> */}
+        <hr className="border-1 my-2 border-primary" />
       </div>
     </>
   )
