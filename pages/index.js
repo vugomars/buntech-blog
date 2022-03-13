@@ -5,15 +5,16 @@ import { BaseLayout } from '@components/ui/layout'
 import { sanityClient, urlFor } from '../sanity'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useNetwork } from 'hooks'
 import ModalOrder from '@components/ui/examples/ModalOrder'
+import { useEthPrice } from 'hooks/tokenPrice/useEthPrice'
+import { useNetwork } from 'hooks'
 
 const Home = ({ posts, adsPost }) => {
     const { network } = useNetwork()
+    const { eth } = useEthPrice()
     return (
         <>
             <HeroSlide />
-
             <div className="mx-auto grid w-full max-w-[1440px] grid-cols-3 gap-4 px-2 pt-2 md:w-5/6">
                 <div className="col-span-3 md:col-span-2">
                     {/* <AdsPost /> */}

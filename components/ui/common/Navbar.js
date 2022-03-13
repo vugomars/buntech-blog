@@ -1,3 +1,4 @@
+import { useEthPrice } from "hooks/tokenPrice/useEthPrice"
 
 const Navbar = () => {
     const s = {
@@ -8,6 +9,7 @@ const Navbar = () => {
         textList: `hover:text-gray-500 cursor-pointer border-r px-2 py-2 first:border-l`,
         rightList: `hover:text-gray-500 cursor-pointer border-r border-l`,
     }
+
     return (
         <>
             <div className="border-tb border">
@@ -26,6 +28,8 @@ const Navbar = () => {
                             <div className={s.textList}>PROJECTS</div>
                             <div className={s.textList}>COURSES</div>
                             <div className={s.textList}>TUTORIAL</div>
+                        </div>
+                        <div className="hidden text-primary md:flex font-medium">
                         </div>
                         <div className="border-r border-l pl-7">
                             <div className="flex rounded-full py-1">
