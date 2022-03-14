@@ -1,33 +1,88 @@
+import { GrLaunch } from 'react-icons/gr'
+import { CgMoreO } from 'react-icons/cg'
+import { AiOutlinePicture } from 'react-icons/ai'
+import { RiExchangeDollarFill } from 'react-icons/ri'
+import { GiToken, GiWorld } from 'react-icons/gi'
+import { FaGamepad } from 'react-icons/fa'
+import { SiWebassembly } from 'react-icons/si'
+import { BsShieldLock } from 'react-icons/bs'
+
 const ListProducts = () => {
     return (
         <>
-            <div className="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 gap-4 ">
-                <div className="aniBtn flex w-full flex-col items-center justify-center bg-secondary">
-                    LaunchPad
+            <div className="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 items-start gap-4 ">
+                <div className="aniBtn flex w-full flex-col items-center justify-center">
+                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
+                        <GrLaunch />
+                    </div>
+                    <span className="font-bold m-1 text-primary">
+                        LaunchPad
+                    </span>
                 </div>
-                <div className="aniBtn flex h-full w-full flex-col items-center justify-center bg-secondary">
-                    Create Token
+                <div className="aniBtn flex w-full flex-col items-center justify-center">
+                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
+                        <GiToken />
+                    </div>
+                    <span className="text-center font-bold m-1 text-primary">
+                        Create Token
+                    </span>
                 </div>
-                <div className="aniBtn flex h-full w-full flex-col items-center justify-center bg-secondary">
-                    DEX Swap
+                <div className="aniBtn flex w-full flex-col items-center justify-center">
+                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
+                        <RiExchangeDollarFill />
+                    </div>
+                    <span className="text-center font-bold m-1 text-primary">
+                        DEX Swap
+                    </span>
                 </div>
-                <div className="aniBtn flex h-full w-full flex-col items-center justify-center bg-secondary">
-                    Game NFT
+                <div className="aniBtn flex w-full flex-col items-center justify-center">
+                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
+                        <FaGamepad />
+                    </div>
+                    <span className="text-center font-bold m-1 text-primary">
+                        Game NFT
+                    </span>
                 </div>
-                <div className="aniBtn flex h-full w-full flex-col items-center justify-center bg-secondary">
-                    NFT Marketplace
+                <div className="aniBtn flex w-full flex-col items-center justify-center">
+
+                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
+                        <AiOutlinePicture />
+                    </div>
+                    <span className="font-bold m-1 text-primary text-center">
+                        NFT Marketplace
+                    </span>
                 </div>
-                <div className="aniBtn flex h-full w-full flex-col items-center justify-center bg-secondary">
-                    WebAssembly
+                <div className="aniBtn flex w-full flex-col items-center justify-center">
+                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
+                        <SiWebassembly />
+                    </div>
+                    <span className="font-bold text-center m-1 text-primary">
+                        Web Assembly
+                    </span>
                 </div>
-                <div className="aniBtn flex h-full w-full flex-col items-center justify-center bg-secondary">
-                    DAO
+                <div className="aniBtn flex w-full flex-col items-center justify-center">
+                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
+                        <GiWorld />
+                    </div>
+                    <span className="font-bold m-1 text-primary">
+                        DAO
+                    </span>
                 </div>
-                <div className="aniBtn flex h-full w-full flex-col items-center justify-center bg-secondary">
-                    Lock Token
+                <div className="aniBtn flex w-full flex-col items-center justify-center">
+                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
+                        <BsShieldLock />
+                    </div>
+                    <span className="font-bold m-1 text-primary text-center">
+                        Lock Token
+                    </span>
                 </div>
-                <div className="aniBtn flex h-full w-full flex-col items-center justify-center bg-secondary">
-                    More
+                <div className="aniBtn flex w-full flex-col items-center justify-center">
+                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
+                        <CgMoreO />
+                    </div>
+                    <span className="font-bold m-1 text-primary">
+                        More
+                    </span>
                 </div>
             </div>
         </>

@@ -1,4 +1,5 @@
 import { useEthPrice } from "hooks/tokenPrice/useEthPrice"
+import Link from "next/link"
 
 const Navbar = () => {
     const s = {
@@ -21,12 +22,16 @@ const Navbar = () => {
                             </div>
                         </div>
                         <div className={s.left}>
-                            <div className={s.textList}>
-                                <p>HOME</p>
-                            </div>
+                            <Link href="/">
+                                <a className={s.textList}>
+                                    HOME
+                                </a>
+                            </Link>
                             <div className={s.textList}>BLOG</div>
                             <div className={s.textList}>PROJECTS</div>
-                            <div className={s.textList}>COURSES</div>
+                            <Link href="/courses">
+                                <a className={s.textList}>COURSES</a>
+                            </Link>
                             <div className={s.textList}>TUTORIAL</div>
                         </div>
                         <div className="hidden text-primary md:flex font-medium">

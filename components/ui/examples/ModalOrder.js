@@ -1,19 +1,32 @@
 import { useEffect, useState } from "react";
 import { Modal } from ".";
 
-export default function OrderModal() {
+export default function OrderModal({ data, onClose }) {
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        if (!!data) {
+            setIsOpen(true)
+        }
+    }, [data]);
+
+    const closeModal = () => {
+        setIsOpen(false)
+        onClose()
+    }
+
     return (
-        <Modal isOpen={false}>
+        <Modal isOpen={isOpen}>
             <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
                 <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div className="sm:flex sm:items-start">
                         <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                             <h3 className="mb-7 text-lg font-bold leading-6 text-gray-900" id="modal-title">
-                                Course Title
+                                {data.title}
                             </h3>
                             <div className="mt-1 relative rounded-md">
                                 <div className="mb-1">
-                                    <label className="mb-2 font-bold">Price(eth)</label>
+                                    <label className="mb-2 font-bold">Price(ETH)</label>
                                     <div className="text-xs text-gray-700 flex">
                                         <label className="flex items-center mr-2">
                                             <input
@@ -70,11 +83,16 @@ export default function OrderModal() {
                         </div>
                     </div>
                 </div>
-                <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex">
-                    <button>
+                <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex space-x-4">
+                    <button
+                        className="bg-indigo-500 text-white font-bold px-4 py-2 rounded-md aniBtn"
+                    >
                         Submit
                     </button>
-                    <button>
+                    <button
+                        onClick={closeModal}
+                        className="bg-secondary text-primary font-bold px-4 py-2 rounded-md aniBtn"
+                    >
                         Cancel
                     </button>
                 </div>

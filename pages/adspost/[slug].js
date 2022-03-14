@@ -19,7 +19,7 @@ export default function PostDetail({ post }) {
                     <img
                         src={urlFor(post.mainImage).url()}
                         alt=""
-                        className="mt-2 h-40 w-full object-cover"
+                        className="h-40 w-full object-cover"
                     />
                     <article className="">
                         <h1 className="mt-6 mb-3 text-3xl font-medium">{post.title}</h1>
