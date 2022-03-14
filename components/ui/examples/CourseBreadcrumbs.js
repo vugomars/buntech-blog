@@ -1,23 +1,22 @@
+import ActiveLink from "./ActiveLink";
 
-const CourseBreadcrumbs = () => {
+export default function CourseBreadcrumbs({ items }) {
     return (
         <>
             <div>
                 <ol className="flex leading-none items-center text-primary divide-x divide-primary">
-                    <li className="pr-4">
-                        <a href="#">Buy</a>
-                    </li>
-
-                    <li className="px-4">
-                        <a href="#">My Courses</a>
-                    </li>
-                    <li className="px-4">
-                        <a href="#">All Courses</a>
-                    </li>
+                    {items.map((item, i) =>
+                        <li key={item.value} className={`${i == 0 ? "pr-4" : "px-4"} font-medium text-gray-800 hover:text-gray-700`}>
+                            <ActiveLink href={item.href} >
+                                <a>
+                                    {item.value}
+                                </a>
+                            </ActiveLink>
+                        </li>
+                    )}
                 </ol>
             </div>
         </>
     )
 }
 
-export default CourseBreadcrumbs

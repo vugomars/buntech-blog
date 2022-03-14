@@ -1,5 +1,6 @@
 import { getAllCourse } from '@components/data/courses/fetcher'
-import { Button, CBreadcrumb } from '@components/ui/examples'
+import CourseHeader from '@components/ui/common/courses/CourseHeader'
+import { Button } from '@components/ui/examples'
 import OrderModal from '@components/ui/examples/ModalOrder'
 import { BaseLayout } from '@components/ui/layout'
 import { useWalletInfo } from 'hooks'
@@ -13,47 +14,34 @@ export default function CoursesPage({ courses }) {
   const { eth } = useEthPrice()
   const { account, network, canPurchase } = useWalletInfo()
 
+  const purchaseCourse = (order) => {
+    alert(JSON.stringify(order))
+  }
+
   return (
     <>
-      <div className="mx-auto mt-4 w-full max-w-[1440px] px-2 md:w-5/6">
-        <div className="flex items-center justify-center space-x-8 ">
-          <div className="aniBtn flex h-12 w-56 select-none items-center justify-center rounded-xl bg-secondary">
-            <Image src="/logo/small-eth.webp" width={40} height={40} />
-            <p className="text-sm font-bold text-primary md:text-xl">
-              = {eth.data}$
-            </p>
-          </div>
-
-          <div className="aniBtn flex h-12 w-56 select-none items-center justify-center rounded-xl bg-secondary">
-            <p className="text-sm font-bold text-primary md:text-xl">
-              {eth.perItem}$ = 100$
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="mx-auto mt-4 w-full max-w-[1440px] px-2 md:w-5/6">
-        <div className="flex items-center justify-center space-x-8 ">
-          <CBreadcrumb />
-        </div>
-      </div>
+      <CourseHeader />
       <div className="mx-auto mt-4 grid w-full max-w-[1440px] grid-cols-1 gap-8 px-2 md:w-5/6 md:grid-cols-2">
         {courses.map((course) => (
           <div className="grid grid-cols-2 gap-4" key={course.id}>
-            <div className="col-span-2 md:col-span-1">
-              <Link href={`/courses/${course.slug}`}>
-                <a>
-                  <Image
-                    src={course.coverImage}
-                    height={1080}
-                    width={1920}
-                    alt={course.title}
-                    layout="responsive"
-                    objectFit="fill"
-                    objectPosition="center"
-                    className="aniBtn h-full rounded-xl"
-                  />
-                </a>
-              </Link>
+            <div className="aniBtn col-span-2 rounded-xl md:col-span-1">
+              <div className="relative h-full">
+                <Link href={`/courses/${course.slug}`}>
+                  <a>
+                    <Image
+                      src={course.coverImage}
+                      height={1080}
+                      width={1920}
+                      alt={course.title}
+                      layout="responsive"
+                      objectFit="cover"
+                      objectPosition="center"
+                      className="aniBtn h-full rounded-xl"
+                      priority
+                    />
+                  </a>
+                </Link>
+              </div>
             </div>
             <div className="col-span-2 flex flex-col items-start justify-between space-y-2 md:col-span-1">
               <div className="">
@@ -77,7 +65,11 @@ export default function CoursesPage({ courses }) {
           </div>
         ))}
         {selected && (
-          <OrderModal data={selected} onClose={() => setSelected(null)} />
+          <OrderModal
+            data={selected}
+            onSubmit={purchaseCourse}
+            onClose={() => setSelected(null)}
+          />
         )}
       </div>
     </>

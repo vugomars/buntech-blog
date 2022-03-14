@@ -5,14 +5,8 @@ import { BaseLayout } from '@components/ui/layout'
 import { sanityClient, urlFor } from '../sanity'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEthPrice } from 'hooks/tokenPrice/useEthPrice'
-import { useNetwork } from 'hooks'
-import { getAllCourse } from '@components/data/courses/fetcher'
 
 const Home = ({ posts, adsPost }) => {
-    const { network } = useNetwork()
-    const { eth } = useEthPrice()
-
     return (
         <>
             <HeroSlide />
@@ -112,7 +106,7 @@ const Home = ({ posts, adsPost }) => {
                         </div>
                         {posts.map(post => (
                             <Link href={`/adspost/${post.slug.current}`} key={post._id}>
-                                <div className="relative grid grid-cols-2 gap-4 overflow-hidden">
+                                <div className="relative grid grid-cols-2 gap-4 overflow-hidden pt-2">
                                     <Image
                                         src={urlFor(post.mainImage).url()}
                                         width={1920}

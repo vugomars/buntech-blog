@@ -6,6 +6,10 @@
   .aniBtn {
     @apply transition-all duration-300 ease-out hover:scale-105;
   }
+
+  .ani {
+    @apply transition-all duration-300 ease-out hover:scale-100;
+  }
 }
 
 .fit {

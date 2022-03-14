@@ -1,13 +1,14 @@
-import { useEthPrice } from "hooks/tokenPrice/useEthPrice"
 import Link from "next/link"
+import { useRouter } from "next/router"
+import { ActiveLink } from "../examples"
 
 const Navbar = () => {
     const s = {
         wrapper: `max-w-[1440px] w-full px-2 md:w-5/6 mx-auto`,
-        block: `flex items-center justify-between`,
-        left: `hidden md:flex text-primary font-medium`,
-        leftmb: `flex md:hidden text-primary font-medium `,
-        textList: `hover:text-gray-500 cursor-pointer border-r px-2 py-2 first:border-l`,
+        block: `flex items-center justify-between ani`,
+        left: `hidden md:flex text-gray-800 font-medium`,
+        leftmb: `flex md:hidden text-gray-800 font-medium `,
+        textList: `hover:text-gray-500 cursor-pointer hover:bg-secondary/70 border-r px-2 py-2 first:border-l`,
         rightList: `hover:text-gray-500 cursor-pointer border-r border-l`,
     }
 
@@ -18,21 +19,43 @@ const Navbar = () => {
                     <div className={s.block}>
                         <div className={s.leftmb}>
                             <div className={s.textList}>
-                                <p>HOME</p>
+                                <ActiveLink href="/" >
+                                    <a>
+                                        HOME
+                                    </a>
+                                </ActiveLink>
                             </div>
                         </div>
                         <div className={s.left}>
-                            <Link href="/">
-                                <a className={s.textList}>
-                                    HOME
-                                </a>
-                            </Link>
-                            <div className={s.textList}>BLOG</div>
-                            <div className={s.textList}>PROJECTS</div>
-                            <Link href="/courses">
-                                <a className={s.textList}>COURSES</a>
-                            </Link>
-                            <div className={s.textList}>TUTORIAL</div>
+                            <div className={s.textList}>
+                                <ActiveLink href="/" >
+                                    <a >
+                                        HOME
+                                    </a>
+                                </ActiveLink>
+                            </div>
+                            <div className={s.textList}>
+                                <ActiveLink href="#" >
+                                    <a >
+                                        PROJECTS
+                                    </a>
+                                </ActiveLink>
+                            </div>
+                            <div className={s.textList}>
+                                <ActiveLink href="/courses" >
+                                    <a >
+                                        COURSES
+                                    </a>
+                                </ActiveLink>
+                            </div>
+                            <div className={s.textList}>
+
+                                <ActiveLink href="#" >
+                                    <a>
+                                        TUTORIALS
+                                    </a>
+                                </ActiveLink>
+                            </div>
                         </div>
                         <div className="hidden text-primary md:flex font-medium">
                         </div>
