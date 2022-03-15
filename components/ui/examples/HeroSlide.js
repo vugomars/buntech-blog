@@ -1,7 +1,7 @@
 import { useNetwork } from 'hooks'
 import Image from 'next/image'
 
-const HeroSlide = () => {
+const HeroSlide = ({ href }) => {
     const s = {
         wrapper: `max-w-[1440px] w-full px-2 md:w-5/6 mx-auto relative`,
     }
@@ -30,7 +30,7 @@ const HeroSlide = () => {
             </div>
                   */}
                 <Image
-                    src="/heroslide/hero1.png"
+                    src={href}
                     width={1500}
                     height={500}
                     className="aniBtn"

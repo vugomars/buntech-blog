@@ -22,7 +22,7 @@ export default function PostDetail({ post }) {
                     />
                     <article className="">
                         <h1 className="mt-4 mb-2 text-3xl font-medium">{post.title}</h1>
-                        <h2 className="text-lg font-light">{post.description}</h2>
+                        <h2 className="text-lg font-light text-justify">{post.description}</h2>
                         <span className="flex items-center space-x-2 ">
                             <Image
                                 src={urlFor(post.author.image).url()}
@@ -31,7 +31,7 @@ export default function PostDetail({ post }) {
                                 className="rounded-full"
                             />
                             <span className="rounded-full bg-secondary px-2 py-0.5 text-primary">
-                                {post.author.name} - {new Date(post._createAt).toLocaleString()}
+                                {post.author.name} - {new Date(post._createdAt).toLocaleString()}
                             </span>
                         </span>
                         <div>
@@ -43,15 +43,17 @@ export default function PostDetail({ post }) {
                                     className=""
                                     serializers={{
                                         h1: (props) => (
-                                            <h1 className="my-5 text-2xl font-bold underline" {...props} />
+                                            <h1 className="my-5 text-2xl font-bold underline text-justify" {...props} />
                                         ),
-                                        h2: (props) => <h1 className="my-5 text-xl font-medium" {...props} />,
+                                        h2: (props) => <h1 className="my-5 text-xl font-medium justify" {...props} />,
                                         li: ({ children }) => (
-                                            <li className="ml-4 list-disc">{children}</li>
+                                            <li className="ml-4 list-disc text-justify">{children}</li>
                                         ),
+                                        normal: (props) => <p className='text-justify' {...props} />
+                                        ,
                                         link: ({ href, children }) => (
                                             <a href={href} className='text-blue-500 hover:underline'>{children}</a>
-                                        )
+                                        ),
                                     }}
                                 /> :
                                 <div className="flex items-center justify-center py-20">
