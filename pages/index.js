@@ -5,10 +5,16 @@ import { BaseLayout } from '@components/ui/layout'
 import { sanityClient, urlFor } from '../sanity'
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 
 const Home = ({ posts, adsPost }) => {
     return (
         <>
+            <Head>
+                <title>BunTech - Blockchain Blog</title>
+                <link rel="shortcut icon" href="/favicon.ico" />
+                <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon.png" />
+            </Head>
             <HeroSlide />
             <div className="mx-auto grid w-full max-w-[1440px] grid-cols-3 gap-4 px-2 pt-2 md:w-5/6">
                 <div className="col-span-3 md:col-span-2">

@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="mt-8 bg-gray-600">
         <div className="mx-auto grid w-full max-w-[1440px] grid-cols-1 gap-8 px-4 py-4 text-white md:w-5/6 md:grid-cols-2 lg:grid-cols-3">
           <div className="col-span-1">
-            <Image src="/images/logo-web.png" height={43} width={150} />
+            <Image src="/images/logo-footer.png" height={43} width={150} />
             <div className="text-justify text-sm">
               <br />
               BunTech là một nền tảng cung cấp thông tin, kiến thức về các công
@@ -62,9 +62,9 @@ const Footer = () => {
               @Contact Me
             </h1>
             <div className="border border-white py-2 pl-4">
-              <p className="text-orange-400">Tuyên bố từ chối trách nhiệm:</p> Các
-              thông tin được đăng trên Buntech chỉ mang ý kiến cá nhân của tác
-              giả, không cấu thành bất kỳ lời khuyên đầu tư nào.
+              <p className="text-orange-400">Tuyên bố từ chối trách nhiệm:</p>{' '}
+              Các thông tin được đăng trên Buntech chỉ mang ý kiến cá nhân của
+              tác giả, không cấu thành bất kỳ lời khuyên đầu tư nào.
             </div>
             <div className="pt-4 text-secondary underline">Follow me on</div>
             <div className="flex space-x-2 pt-2 text-xl">
