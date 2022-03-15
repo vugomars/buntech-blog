@@ -27,7 +27,7 @@ export default function PostList({ posts }) {
                                 <div className="flex text-[12px] line-clamp-2 md:text-lg md:line-clamp-3 text-justify">
                                     {post.description}
                                 </div>
-                                <div className="cursor-pointer text-[16px] font-medium text-primary md:text-lg">
+                                <div className="cursor-pointer text-[16px] font-medium text-primary md:text-lg flex justify-between">
                                     <Link href="/about">
                                         <a>
                                             <span className="flex items-center space-x-2 ">
@@ -41,6 +41,8 @@ export default function PostList({ posts }) {
                                             </span>
                                         </a>
                                     </Link>
+                                    <span className="text-[10px] flex items-end">{new Date(post._createdAt).toLocaleString()}</span>
+
                                 </div>
                             </div>
                         </div>

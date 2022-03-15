@@ -90,16 +90,22 @@ export const getServerSideProps = async () => {
                 mainImage,
                 slug,
 }`
+    const category = `*[_type == "category"] {
+title,
+  description
+}`
 
 
     const posts = await sanityClient.fetch(query)
     const adsPost = await sanityClient.fetch(adspost)
+    const categories = await sanityClient.fetch(category)
 
 
     return {
         props: {
             posts,
             adsPost,
+            categories
         },
     }
 }
