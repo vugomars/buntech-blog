@@ -9,6 +9,7 @@ export default function AdsPost({ posts }) {
                 posts.map((post) => (
                     <Link href={`/adspost/${post.slug.current}`} key={post._id}>
                         <div className="relative grid grid-cols-2 gap-4 overflow-hidden">
+                            {post.categories}
                             <Image
                                 src={urlFor(post.mainImage).url()}
                                 width={1920}
