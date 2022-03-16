@@ -6,84 +6,79 @@ import { GiToken, GiWorld } from 'react-icons/gi'
 import { FaGamepad } from 'react-icons/fa'
 import { SiWebassembly } from 'react-icons/si'
 import { BsShieldLock } from 'react-icons/bs'
+import Link from 'next/link'
+
+const lists = [
+    {
+        id: 1,
+        href: "#",
+        icon: <GrLaunch />,
+        title: "LaunchPad",
+    },
+    {
+        id: 2,
+        href: "#",
+        icon: <GiToken />,
+        title: "Create Token",
+    },
+    {
+        id: 3,
+        href: "#",
+        icon: <RiExchangeDollarFill />,
+        title: "DEX Swap",
+    },
+    {
+        id: 4,
+        href: "#",
+        icon: <FaGamepad />,
+        title: "Game NFT",
+    },
+    {
+        id: 5,
+        href: "#",
+        icon: <AiOutlinePicture />,
+        title: "NFT Marketplace",
+    },
+    {
+        id: 6,
+        href: "#",
+        icon: <SiWebassembly />,
+        title: "Web Assembly",
+    },
+    {
+        id: 7,
+        href: "#",
+        icon: <GiWorld />,
+        title: "DAO",
+    },
+    {
+        id: 8,
+        href: "#",
+        icon: <BsShieldLock />,
+        title: "Lock Token",
+    },
+    {
+        id: 9,
+        href: "#",
+        icon: <CgMoreO />,
+        title: "More",
+    },
+]
 
 const ListProducts = () => {
     return (
         <>
-            <div className="grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 items-start gap-4 ">
-                <div className="aniBtn flex w-full flex-col items-center justify-center">
-                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
-                        <GrLaunch />
-                    </div>
-                    <span className="font-bold m-1 text-primary">
-                        LaunchPad
-                    </span>
-                </div>
-                <div className="aniBtn flex w-full flex-col items-center justify-center">
-                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
-                        <GiToken />
-                    </div>
-                    <span className="text-center font-bold m-1 text-primary">
-                        Create Token
-                    </span>
-                </div>
-                <div className="aniBtn flex w-full flex-col items-center justify-center">
-                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
-                        <RiExchangeDollarFill />
-                    </div>
-                    <span className="text-center font-bold m-1 text-primary">
-                        DEX Swap
-                    </span>
-                </div>
-                <div className="aniBtn flex w-full flex-col items-center justify-center">
-                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
-                        <FaGamepad />
-                    </div>
-                    <span className="text-center font-bold m-1 text-primary">
-                        Game NFT
-                    </span>
-                </div>
-                <div className="aniBtn flex w-full flex-col items-center justify-center">
-
-                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
-                        <AiOutlinePicture />
-                    </div>
-                    <span className="font-bold m-1 text-primary text-center">
-                        NFT Marketplace
-                    </span>
-                </div>
-                <div className="aniBtn flex w-full flex-col items-center justify-center">
-                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
-                        <SiWebassembly />
-                    </div>
-                    <span className="font-bold text-center m-1 text-primary">
-                        Web Assembly
-                    </span>
-                </div>
-                <div className="aniBtn flex w-full flex-col items-center justify-center">
-                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
-                        <GiWorld />
-                    </div>
-                    <span className="font-bold m-1 text-primary">
-                        DAO
-                    </span>
-                </div>
-                <div className="aniBtn flex w-full flex-col items-center justify-center">
-                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
-                        <BsShieldLock />
-                    </div>
-                    <span className="font-bold m-1 text-primary text-center">
-                        Lock Token
-                    </span>
-                </div>
-                <div className="aniBtn flex w-full flex-col items-center justify-center">
-                    <div className="text-3xl rounded-full bg-secondary/50 p-2">
-                        <CgMoreO />
-                    </div>
-                    <span className="font-bold m-1 text-primary">
-                        More
-                    </span>
-                </div>
+            <div className="grid grid-cols-2 items-start gap-4 lg:grid-cols-3 lg:grid-rows-3 ">
+                {lists.map((item) => (
+                    <Link href="#" key={item.id}>
+                        <a className="aniBtn flex w-full flex-col items-center justify-center">
+                            <div className="rounded-full bg-secondary/50 p-2 text-3xl">
+                                {item.icon}
+                            </div>
+                            <span className="text-center m-1 font-bold text-primary">{item.title}</span>
+                        </a>
+                    </Link>
+                ))}
             </div>
         </>
     )

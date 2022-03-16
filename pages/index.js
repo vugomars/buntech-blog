@@ -25,11 +25,7 @@ const Home = ({ posts, adsPost }) => {
           <AdsPost posts={adsPost} />
 
           {/* <Post List> */}
-          <Banner
-            title="Lastest Posts"
-            pages="New"
-            className="my-4 select-none"
-          />
+          <Banner title="Lastest Posts" pages="New" className="mb-2" />
           <PostList posts={posts} />
           {/* <Post List> */}
 

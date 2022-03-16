@@ -59,9 +59,25 @@ export default function PostDetailAds({ post }) {
                 height={30}
                 className="rounded-full"
               />
-              <span className="rounded-full bg-secondary px-2 py-0.5 text-primary">
-                {post.author.name} -{' '}
-                {new Date(post._createdAt).toLocaleString()}
+              <span className="flex items-center justify-between pt-2">
+                <div className="flex items-center space-x-2">
+                  <Image
+                    src={urlFor(post.author.image).url()}
+                    width={30}
+                    height={30}
+                    className="rounded-full"
+                  />
+                  <span className="rounded-full bg-secondary px-2 py-0.5 text-primary">
+                    {post.author.name} -{' '}
+                    {new Date(post._createdAt).toLocaleString()}
+                  </span>
+                </div>
+
+                {post.categories.map((category) => (
+                  <span className="items-end rounded-full bg-secondary px-2 py-0.5 text-[10px] text-primary">
+                    {category.title}
+                  </span>
+                ))}
               </span>
             </span>
 
@@ -200,6 +216,7 @@ export default function PostDetailAds({ post }) {
                                 <span>Address</span>
                                 <input
                                   {...register('address', { required: true })}
+                                  placeholder="0x8b164927E4b449e42d5f82E93373Fd3bF4e5c49a"
                                   type="text"
                                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
                                 />
