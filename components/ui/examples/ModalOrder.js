@@ -87,7 +87,7 @@ export default function OrderModal({ data, onClose, onSubmit }) {
                                     disabled={!enablePrice}
                                     value={order.price}
                                     onChange={({ target: { value } }) => {
-                                        if (isNan(value)) { return; }
+                                        if (isNaN(value)) { return; }
                                         setOrder({
                                             ...order,
                                             price: value
@@ -100,8 +100,7 @@ export default function OrderModal({ data, onClose, onSubmit }) {
                                 />
                                 <p className="text-xs text-gray-700">
                                     Price will be verified at the time of the order. If the price will be lower, order can be declined (+- 2% slipage is allowed)
-                                </p>
-                            </div>
+                                </p>                            </div>
                             <div className="mt-2 relative rounded-md">
                                 <div className="mb-1">
                                     <label className="mb-2 font-bold">Email</label>
