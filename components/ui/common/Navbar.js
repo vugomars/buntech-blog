@@ -52,7 +52,7 @@ const Navbar = () => {
 
                                 <ActiveLink href="#" >
                                     <a>
-                                        TUTORIALS
+                                        LIBRARY
                                     </a>
                                 </ActiveLink>
                             </div>

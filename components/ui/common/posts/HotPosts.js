@@ -22,7 +22,7 @@ export default function HotPosts({ posts }) {
                                 <span className="cursor-pointer overflow-hidden font-bold text-justify line-clamp-2 md:text-sm hover:text-gray-500 lg:text-lg">
                                     {post.title}
                                 </span>
-                                <span className="pt-2 text-[10px] md:text-[12px] hidden lg:line-clamp-2 text-justify">
+                                <span className="pt-2 text-[10px] md:text-[12px] hidden lg:line-clamp-3 text-justify">
                                     {post.description}
                                 </span>
                             </div>

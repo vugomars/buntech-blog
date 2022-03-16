@@ -10,14 +10,14 @@ export default function ManageCourses() {
             <div className="max-w-[1440px] w-full md:w-5/6 mx-auto px-2">
                 <CourseFilter />
                 <OwnedCourseCard>
-                    <div className="flex mr-2 relative rounded-md">
+                    <div className="grid grid-cols-6 mr-2 relative rounded-md gap-4">
                         <input
                             type="text"
                             name="account"
                             id="account"
-                            className="w-96 focus:ring-indigo-500 shadow-md focus:border-indigo-500 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"
+                            className="col-span-6 focus:ring-indigo-500 lg:col-span-4 shadow-md focus:border-indigo-500 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"
                             placeholder="0x2341ab..." />
-                        <Button>
+                        <Button className="bg-secondary col-span-6 lg:col-span-2">
                             Verify
                         </Button>
                     </div>

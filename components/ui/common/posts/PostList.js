@@ -14,8 +14,8 @@ export default function PostList({ posts }) {
                             <span className="mb-2 cursor-pointer overflow-hidden text-justify text-xl font-bold line-clamp-1 hover:text-gray-500 md:text-2xl md:line-clamp-2">
                                 {post.title}
                             </span>
-                            <div className="grid grid-cols-6 gap-4">
-                                <div className="col-span-2">
+                            <div className="grid grid-cols-12 gap-4">
+                                <div className="col-span-6 md:col-span-5 lg:col-span-4">
                                     <Image
                                         src={urlFor(post.mainImage).url()}
                                         width={1920}
@@ -26,8 +26,8 @@ export default function PostList({ posts }) {
                                         className="aniBtn cursor-pointer rounded-md"
                                     />
                                 </div>
-                                <div className="col-span-4 flex h-full flex-col justify-between">
-                                    <div className="flex text-justify text-[12px] line-clamp-2 md:text-lg md:line-clamp-3">
+                                <div className="col-span-6 md:col-span-7 lg:col-span-8 flex h-full flex-col justify-between">
+                                    <div className="flex text-justify text-[12px] line-clamp-3 md:text-lg">
                                         {post.description}
                                     </div>
                                     <div className="flex cursor-pointer justify-between text-[16px] font-medium text-primary md:text-lg">
@@ -40,16 +40,16 @@ export default function PostList({ posts }) {
                                                         height={30}
                                                         className="rounded-full"
                                                     />
-                                                    <span>{post.author.name}</span>
+                                                    <span className="text-sm">{post.author.name}</span>
                                                     {post.categories.map((category) => (
-                                                        <div key={category.title} className="select-none rounded-full bg-secondary px-2 py-0.5 text-sm text-primary">
+                                                        <div key={category.title} className="hidden md:flex select-none rounded-full bg-secondary px-2 py-0.5 text-sm text-primary">
                                                             {category.title}
                                                         </div>
                                                     ))}
                                                 </span>
                                             </a>
                                         </Link>
-                                        <span className="flex items-end text-[10px]">
+                                        <span className="hidden md:flex items-end text-[10px]">
                                             {new Date(post._createdAt).toLocaleString()}
                                         </span>
                                     </div>

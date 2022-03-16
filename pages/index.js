@@ -21,7 +21,7 @@ const Home = ({ posts, adsPost }) => {
             <HeroSlide href={`/heroslide/hero1.png`} />
 
             <div className={s.wrapper}>
-                <div className="col-span-3 md:col-span-2">
+                <div className="col-span-3 lg:col-span-2">
                     <AdsPost posts={adsPost} />
 
                     {/* <Post List> */}
@@ -32,21 +32,14 @@ const Home = ({ posts, adsPost }) => {
                     <Banner
                         title="List Product"
                         pages="Project"
-                        className="select-none py-2 md:hidden"
+                        className="select-none py-2 hidden md:grid lg:hidden"
                     />
-                    <div className="py-2 md:hidden">
+                    <div className="py-2 lg:hidden">
                         <ListProducts />
                     </div>
-
-                    {/* <Mobile Hot List> */}
-                    <div className="py-2 md:hidden">
-                        <Banner title="Hot Posts" pages="More" className="select-none" />
-                        <HotPosts posts={posts} />
-                    </div>
-                    {/* <Mobile Hot List> */}
                 </div>
                 {/* Right Bar */}
-                <div className="col-span-1  hidden flex-col items-start justify-end md:grid">
+                <div className="col-span-1 hidden flex-col items-start justify-end md:hidden lg:grid">
                     <div className="flex flex-col justify-start">
                         {/* Hot Post */}
                         <Banner title="Hot Posts" pages="More" />

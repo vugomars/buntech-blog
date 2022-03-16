@@ -68,7 +68,7 @@ const lists = [
 const ListProducts = () => {
     return (
         <>
-            <div className="grid grid-cols-2 items-start gap-4 lg:grid-cols-3 lg:grid-rows-3 ">
+            <div className="hidden md:grid items-start gap-4 md:grid-cols-3">
                 {lists.map((item) => (
                     <Link href="#" key={item.id}>
                         <a className="aniBtn flex w-full flex-col items-center justify-center">
