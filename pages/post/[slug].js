@@ -41,7 +41,7 @@ export default function PostDetail({ post }) {
         <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon.png" />
       </Head>
       <div className="mx-auto grid w-full max-w-[1440px] grid-cols-3 gap-4 px-2 pt-2 md:w-5/6">
-        <div className="col-span-3 md:col-span-2">
+        <div className="col-span-3 lg:col-span-2">
           <img
             src={urlFor(post.mainImage).url()}
             alt=""
@@ -60,7 +60,7 @@ export default function PostDetail({ post }) {
                   height={30}
                   className="rounded-full"
                 />
-                <span className="rounded-full bg-secondary px-2 py-0.5 text-primary">
+                <span className="md:text-md rounded-full bg-secondary px-2 py-0.5 text-[12px] text-primary">
                   {post.author.name} -{' '}
                   {new Date(post._createdAt).toLocaleString()}
                 </span>
@@ -72,7 +72,39 @@ export default function PostDetail({ post }) {
                 </span>
               ))}
             </span>
-            <div>
+
+            <div className="flex lg:hidden">
+              <PortableText
+                dataset={process.env.NEXT_PUBLIC_SANITY_DATESET}
+                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                content={post.body}
+                className=""
+                serializers={{
+                  h1: (props) => (
+                    <h1
+                      className="my-5 text-justify text-2xl font-bold underline"
+                      {...props}
+                    />
+                  ),
+                  h2: (props) => (
+                    <h1
+                      className="justify my-5 text-xl font-medium"
+                      {...props}
+                    />
+                  ),
+                  li: ({ children }) => (
+                    <li className="ml-4 list-disc text-justify">{children}</li>
+                  ),
+                  normal: (props) => <p className="text-justify" {...props} />,
+                  link: ({ href, children }) => (
+                    <a href={href} className="text-blue-500 hover:underline">
+                      {children}
+                    </a>
+                  ),
+                }}
+              />
+            </div>
+            <div className="hidden lg:grid">
               {account.data ? (
                 <PortableText
                   dataset={process.env.NEXT_PUBLIC_SANITY_DATESET}
@@ -266,7 +298,7 @@ export default function PostDetail({ post }) {
             </div>
           </article>
         </div>
-        <div className="col-span-1 hidden flex-col justify-start md:flex ">
+        <div className="col-span-1 hidden flex-col justify-start lg:flex ">
           <div className="flex flex-col justify-start">
             <Banner title="Hot Posts" pages="More" />
             <div className="py-2">
